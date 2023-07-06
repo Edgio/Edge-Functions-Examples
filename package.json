@@ -1,0 +1,21 @@
+{
+  "name": "functionsexamples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Raees Iqbal",
+    "url": "https://raees.me"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@edgio/cli": "^7.0.25-pre-v7-edge-1688583020-7948dd7.0",
+    "@edgio/core": "^7.0.25-pre-v7-edge-1688583020-7948dd7.0",
+    "@edgio/devtools": "^7.0.25-pre-v7-edge-1688583020-7948dd7.0",
+    "@edgio/prefetch": "^7.0.25-pre-v7-edge-1688583020-7948dd7.0"
+  }
+}
