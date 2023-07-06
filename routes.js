@@ -20,3 +20,6 @@ export default new Router()
   .match('/example/sample-page.html', {
     edge_function: './functions/sample-html-page.js',
   })
+  .match('/example/generate.json', {
+    edge_function: './functions/generate-json.js',
+  })
