@@ -1,8 +1,7 @@
 {
-  "name": "functionsexamples",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "functions-examples",
+  "version": "0.2.0",
+  "description": "Edgio Functions Examples",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
