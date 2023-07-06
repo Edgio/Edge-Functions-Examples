@@ -15,3 +15,8 @@ export default new Router()
 
   // plugin enabling basic Edgio functionality
   .use(edgioRoutes)
+
+  // Edgio Functions
+  .match('/example/sample-page.html', {
+    edge_function: './functions/sample-html-page.js',
+  })
