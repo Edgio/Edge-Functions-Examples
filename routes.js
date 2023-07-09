@@ -23,3 +23,6 @@ export default new Router()
   .match('/example/generate.json', {
     edge_function: './functions/generate-json.js',
   })
+  .match('/example/change-headers.json', {
+    edge_function: './functions/change-headers.js',
+  })
