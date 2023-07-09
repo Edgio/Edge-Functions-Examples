@@ -14,26 +14,19 @@ module.exports = {
   origins: [
     {
       // The name of the backend origin
-      name: "origin",
+      name: 'dummy-json',
 
-      // Use the following to override the host header sent from the browser when connecting to the origin
-      override_host_header: "example.com",
+      // When provided, the following value will be sent as the host header when connecting to the origin.
+      // If omitted, the host header from the browser will be forwarded to the origin.
+      override_host_header: 'edgio-functions-dummy-json-default.edgio.link',
 
-      // The list of origin hosts to which to connect
+      // The list of backend hosts
       hosts: [
         {
           // The domain name or IP address of the origin server
-          location: "example.com",
+          location: 'edgio-functions-dummy-json-default.edgio.link',
         },
       ],
-
-      // tls_verify: {
-      //   use_sni: true,
-      //   sni_hint_and_strict_san_check: "example.com",
-      // },
-
-      // Uncomment the following to configure a shield
-      // shields: { us_east: 'DCD' },
     },
   ],
 
