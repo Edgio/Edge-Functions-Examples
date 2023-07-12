@@ -16,6 +16,8 @@ export default new Router()
   // plugin enabling basic Edgio functionality
   .use(edgioRoutes)
 
+  .static('public')
+
   // Edgio Functions
   .match('/example/sample-page.html', {
     edge_function: './functions/sample-html-page.js',
@@ -25,4 +27,7 @@ export default new Router()
   })
   .match('/example/change-headers.json', {
     edge_function: './functions/change-headers.js',
+  })
+  .match('/example/manifest-manipulation', {
+    edge_function: './functions/manifest-manipulation.js',
   })
