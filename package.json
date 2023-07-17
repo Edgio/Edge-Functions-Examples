@@ -14,9 +14,9 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@edgio/cli": "^7.0.27-pre-v7-edge-1689163827-3d59eba.0",
-    "@edgio/core": "^7.0.27-pre-v7-edge-1689163827-3d59eba.0",
-    "@edgio/devtools": "^7.0.27-pre-v7-edge-1689163827-3d59eba.0",
-    "@edgio/prefetch": "^7.0.27-pre-v7-edge-1689163827-3d59eba.0"
+    "@edgio/cli": "^7.0.27-pre-v7-edge-1689634951-c624800.0",
+    "@edgio/core": "^7.0.27-pre-v7-edge-1689634951-c624800.0",
+    "@edgio/devtools": "^7.0.27-pre-v7-edge-1689634951-c624800.0",
+    "@edgio/prefetch": "^7.0.27-pre-v7-edge-1689634951-c624800.0"
   }
 }
