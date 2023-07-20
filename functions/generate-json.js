@@ -10,7 +10,7 @@ export default function init() {
     const content = JSON.stringify(data);
 
     const response = new Response(content, {
-      headers: { "content-type": "application/json; charset=utf-8" },
+      headers: { "content-type": "application/json; charset=utf-8", 'x-edge-power': '9001' },
     });
 
     event.respondWith(response);
