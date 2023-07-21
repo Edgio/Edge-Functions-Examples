@@ -46,7 +46,6 @@ the [Edgio team](https://edg.io/contact-support/).
 
 ## License
 
-[Creative Commons Attribution 4.0 International Public License](LICENSE-CONTENT) for the content (documentation and
-examples)
+[Creative Commons Attribution 4.0 International Public License](LICENSE-CONTENT) for the documentation.
 
 [MIT License](LICENSE-CODE) for the code.
