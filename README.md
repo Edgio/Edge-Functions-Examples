@@ -36,8 +36,11 @@ As the project is in its early beta phase, there are a few limitations. Currentl
 * We only support JavaScript-based code
 * Each request has a 30-second (wall time) timeout limit
 * Each request is limited to 50ms of CPU time
+* Each request is limited to 2MB of memory
 * An Edgio Function can make fetch requests only to origins defined in your property configuration
   file (`edgio.config.js`).
+
+We're looking forward to feedback from our customers about these limitations and how we can improve the product.
 
 ## Support
 
