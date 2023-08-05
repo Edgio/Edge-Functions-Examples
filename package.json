@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "description": "Edgio Functions Examples",
   "scripts": {
-    "edgio": "edgio --api-url=https://api.edgio-stage.app",
+    "edgio": "edgio",
     "update": "edgio use pre-v7-edge",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
