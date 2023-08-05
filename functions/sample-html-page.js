@@ -1,5 +1,6 @@
-export async function handleHttpRequest(request, context) {
-  const content = `
+export default function init() {
+  addEventListener("fetch", async (event) => {
+    const content = `
       <!DOCTYPE html>
       <html lang="en">
         <head>
@@ -12,9 +13,10 @@ export async function handleHttpRequest(request, context) {
         </body>
       </html>`;
 
-  const response = new Response(content, {
-    headers: { "content-type": "text/html; charset=utf-8" },
-  });
+    const response = new Response(content, {
+      headers: { "content-type": "text/html; charset=utf-8" },
+    });
 
-  content.respondWith(response);
+    event.respondWith(response);
+  });
 }
