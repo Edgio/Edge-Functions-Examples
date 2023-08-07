@@ -1,8 +1,8 @@
-# Edgio Functions Examples
+# Edge Functions Examples
 
 ## Description
 
-This repository provides example code for implementing the most common use cases on Edgio Functions. It features
+This repository provides example code for implementing the most common use cases on Edge Functions. It features
 examples of how to add headers to a request, change response bodies before returning them to the client, create HTML
 pages from scratch to return as a response, manipulate video player manifests, and generate JSON from scratch.
 
@@ -11,7 +11,7 @@ We're looking for functional feedback about APIs and features our customers need
 
 ## Prerequisites
 
-To use this project, you must be an Edgio customer and signed up for the Edgio Functions beta. The system requirements
+To use this project, you must be an Edgio customer and signed up for the Edge Functions beta. The system requirements
 include Node.js v16 or higher, and a UNIX-like system (Linux or macOS). The project code is written in JavaScript.
 
 ## Setup and Installation
@@ -28,7 +28,7 @@ To deploy the project to Edgio, use the command `npm run edgio deploy`. Note tha
 logged into Edgio CLI which can be done via `npm run edgio login` and following the instructions.
 This project deploys to `edge-functions-sandbox` team, you must be a member of that team to deploy or you can change
 the team parameter in `edgio.config.js` file but the Edge Functions must be enabled for your team, which can be done by
-contacting your account manager at Edgio and signing up for the  Edgio Functions beta.
+contacting your account manager at Edgio and signing up for the  Edge Functions beta.
 
 ## Known Issues and Limitations
 
