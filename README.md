@@ -25,9 +25,10 @@ include Node.js v16 or higher, and a UNIX-like system (Linux or macOS). The proj
 After setting up the project, run `npm run edgio dev` to start a local development server to test the example functions.
 
 To deploy the project to Edgio, use the command `npm run edgio deploy`. Note that deployment to Edgio requires you to be
-logged into Edgio CLI which can be done via `npm run edgio login` and following the instructions. Also, Edgio Functions
-must be enabled for your team, which can be done by contacting your account manager at Edgio and signing up for the
-Edgio Functions beta.
+logged into Edgio CLI which can be done via `npm run edgio login` and following the instructions.
+This project deploys to `edge-functions-sandbox` team, you must be a member of that team to deploy or you can change
+the team parameter in `edgio.config.js` file but the Edge Functions must be enabled for your team, which can be done by
+contacting your account manager at Edgio and signing up for the  Edgio Functions beta.
 
 ## Known Issues and Limitations
 
