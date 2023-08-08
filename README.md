@@ -8,7 +8,7 @@ pages from scratch to return as a response, manipulate video player manifests, a
 
 ## Prerequisites
 
-To use this project, you must be an Edgio customer and signed up for the Edge Functions beta. The system requirements
+To use this project, you must be an Edgio customer and signed up for the Edge Functions. The system requirements
 include Node.js v16 or higher, and a UNIX-like system (Linux or macOS). The project code is written in JavaScript.
 
 ## Setup and Installation
@@ -25,11 +25,11 @@ To deploy the project to Edgio, use the command `npm run edgio deploy`. Note tha
 logged into Edgio CLI which can be done via `npm run edgio login` and following the instructions.
 This project deploys to `edge-functions-sandbox` team, you must be a member of that team to deploy or you can change
 the team parameter in `edgio.config.js` file but the Edge Functions must be enabled for your team, which can be done by
-contacting your account manager at Edgio and signing up for the  Edge Functions beta.
+contacting your account manager at Edgio and signing up for the  Edge Functions.
 
 ## Known Issues and Limitations
 
-As the project is in its early beta phase, there are a few limitations. Currently
+Currently
 
 * We only support JavaScript-based code
 * Each request has a 30-second (wall time) timeout limit
