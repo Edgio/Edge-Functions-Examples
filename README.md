@@ -6,9 +6,6 @@ This repository provides example code for implementing the most common use cases
 examples of how to add headers to a request, change response bodies before returning them to the client, create HTML
 pages from scratch to return as a response, manipulate video player manifests, and generate JSON from scratch.
 
-Please note that as Edgio Function is in its early beta phase, we do not advise running production traffic on it yet.
-We're looking for functional feedback about APIs and features our customers need.
-
 ## Prerequisites
 
 To use this project, you must be an Edgio customer and signed up for the Edge Functions beta. The system requirements
