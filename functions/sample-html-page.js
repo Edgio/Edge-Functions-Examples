@@ -16,5 +16,5 @@ export async function handleHttpRequest(request, context) {
     headers: { "content-type": "text/html; charset=utf-8" },
   });
 
-  content.respondWith(response);
+  context.respondWith(response);
 }
