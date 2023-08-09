@@ -19,5 +19,9 @@
     "@edgio/core": "^7.0.32-next-1691430209-d78cce5.0",
     "@edgio/devtools": "^7.0.32-next-1691430209-d78cce5.0",
     "@edgio/prefetch": "^7.0.32-next-1691430209-d78cce5.0"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.3.1",
+    "whatwg-url": "^13.0.0"
   }
 }
