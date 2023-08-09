@@ -16,6 +16,7 @@ include Node.js v16 or higher, and a UNIX-like system (Linux or macOS). The proj
 1. Ensure you meet the prerequisites.
 2. Clone the repository to your local machine.
 3. Run `npm install` in the repository directory.
+4. Update the `team` parameter in `edgio.config.js` file to match your Edgio console team slug.
 
 ## Getting Started
 
