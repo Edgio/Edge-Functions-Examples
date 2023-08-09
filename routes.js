@@ -19,7 +19,7 @@ export default new Router()
   .static('public')
 
   // Edgio Functions
-  .match('/example/sample-page.html', {
+  .match('/', {
     edge_function: './functions/sample-html-page.js',
   })
   .match('/example/generate.json', {
