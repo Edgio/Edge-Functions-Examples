@@ -22,7 +22,7 @@ export default new Router()
   .match('/example/edge-database-turso', {
     edge_function: './functions/edge-database-turso.js',
   })
-  .match('/example/sample-page.html', {
+  .match('/', {
     edge_function: './functions/sample-html-page.js',
   })
   .match('/example/generate.json', {

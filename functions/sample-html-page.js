@@ -8,7 +8,12 @@ export async function handleHttpRequest(request, context) {
         </head>
         <body>
           <h1>Salutations from Edgio Functions!</h1>
-          <p>This is a sample HTML page.</p>
+          <p>This is a sample HTML page. Please see the examples below:</p>
+          <ul>
+            <li><a href="/">This page</a></li>
+            <li><a href="/example/change-headers.json">Change headers example</a></li>
+            <li><a href="/example/generate.json">Generate a JSON response</a></li>
+          </ul>
         </body>
       </html>`;
 
@@ -16,5 +21,5 @@ export async function handleHttpRequest(request, context) {
     headers: { "content-type": "text/html; charset=utf-8" },
   });
 
-  content.respondWith(response);
+  context.respondWith(response);
 }

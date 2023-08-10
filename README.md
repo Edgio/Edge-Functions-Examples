@@ -33,7 +33,7 @@ contacting your account manager at Edgio and signing up for the  Edge Functions.
 Currently
 
 * We only support JavaScript-based code
-* Each request has a 30-second (wall time) timeout limit
+* Each request has a 60-second (wall time) timeout limit
 * Each request is limited to 50ms of CPU time
 * Each request is limited to 2MB of memory
 * An Edgio Function can make fetch requests only to origins defined in your property configuration
