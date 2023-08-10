@@ -1,10 +1,16 @@
 import { URL, URLSearchParams } from 'whatwg-url';
+
 global.URL = URL;
 global.URLSearchParams = URLSearchParams;
 import { createClient } from "@libsql/client/web";
 
+const tursoFetch = function (...args) {
+  return fetch(args[0], { ...args[1], edgio: { origin: 'turso' } })
+}
+
 export async function handleHttpRequest(request, context) {
   const client = createClient({
+    fetch: tursoFetch,
     url: "libsql://peaceful-captain-flint-raeesbhatti.turso.io",
   });
 

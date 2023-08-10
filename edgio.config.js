@@ -28,6 +28,26 @@ module.exports = {
         },
       ],
     },
+    {
+      // The name of the backend origin
+      name: 'turso',
+
+      // When provided, the following value will be sent as the host header when connecting to the origin.
+      // If omitted, the host header from the browser will be forwarded to the origin.
+      override_host_header: 'peaceful-captain-flint-raeesbhatti.turso.io',
+
+      // The list of backend hosts
+      hosts: [
+        {
+          // The domain name or IP address of the origin server
+          location: 'peaceful-captain-flint-raeesbhatti.turso.io',
+        },
+      ],
+      tls_verify: {
+        use_sni: true,
+        sni_hint_and_strict_san_check: 'peaceful-captain-flint-raeesbhatti.turso.io',
+      }
+    },
   ],
 
   // Uncomment the following to specify environment specific configs
