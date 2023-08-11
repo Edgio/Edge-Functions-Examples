@@ -5,7 +5,8 @@ global.URLSearchParams = URLSearchParams;
 import { createClient } from "@libsql/client/web";
 
 const tursoFetch = function (...args) {
-  return fetch(args[0], { ...args[1], edgio: { origin: 'turso' } })
+  const [url, options, ...rest] = args;
+  return fetch(url, { ...options, edgio: { origin: 'turso' } }, rest)
 }
 
 export async function handleHttpRequest(request, context) {
