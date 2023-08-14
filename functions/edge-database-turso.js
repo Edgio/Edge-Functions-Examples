@@ -6,7 +6,7 @@ import { createClient } from "@libsql/client/http";
 
 const tursoFetch = function (...args) {
   const [url, options, ...rest] = args;
-  return fetch(url, { ...options, edgio: { origin: 'turso' } }, rest)
+  return fetch(url, { ...options, edgio: { origin: 'turso' } }, ...rest)
 }
 
 export async function handleHttpRequest(request, context) {
