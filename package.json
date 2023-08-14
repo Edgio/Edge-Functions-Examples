@@ -15,10 +15,10 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@edgio/cli": "^7.1.1",
-    "@edgio/core": "^7.1.1",
-    "@edgio/devtools": "^7.1.1",
-    "@edgio/prefetch": "^7.1.1"
+    "@edgio/cli": "^7.1.2-rc-1691782237-50d61cc.0",
+    "@edgio/core": "^7.1.2-rc-1691782237-50d61cc.0",
+    "@edgio/devtools": "^7.1.2-rc-1691782237-50d61cc.0",
+    "@edgio/prefetch": "^7.1.2-rc-1691782237-50d61cc.0"
   },
   "dependencies": {
     "@libsql/client": "^0.3.1",
