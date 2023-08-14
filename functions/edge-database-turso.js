@@ -2,7 +2,7 @@ import { URL, URLSearchParams } from 'whatwg-url';
 
 global.URL = URL;
 global.URLSearchParams = URLSearchParams;
-import { createClient } from "@libsql/client/web";
+import { createClient } from "@libsql/client/http";
 
 const tursoFetch = function (...args) {
   const [url, options, ...rest] = args;
