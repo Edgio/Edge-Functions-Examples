@@ -15,9 +15,9 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@edgio/cli": "^7.0.32-rc-1691513088-4f84c9e.0",
-    "@edgio/core": "^7.0.32-rc-1691513088-4f84c9e.0",
-    "@edgio/devtools": "^7.0.32-rc-1691513088-4f84c9e.0",
-    "@edgio/prefetch": "^7.0.32-rc-1691513088-4f84c9e.0"
+    "@edgio/cli": "^7.1.1",
+    "@edgio/core": "^7.1.1",
+    "@edgio/devtools": "^7.1.1",
+    "@edgio/prefetch": "^7.1.1"
   }
 }
