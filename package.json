@@ -15,13 +15,14 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@edgio/cli": "^7.1.2-rc-1691782237-50d61cc.0",
-    "@edgio/core": "^7.1.2-rc-1691782237-50d61cc.0",
-    "@edgio/devtools": "^7.1.2-rc-1691782237-50d61cc.0",
-    "@edgio/prefetch": "^7.1.2-rc-1691782237-50d61cc.0"
+    "@edgio/cli": "^7.1.2-next-1692044776-586a649.0",
+    "@edgio/core": "^7.1.2-next-1692044776-586a649.0",
+    "@edgio/devtools": "^7.1.2-next-1692044776-586a649.0",
+    "@edgio/prefetch": "^7.1.2-next-1692044776-586a649.0"
   },
   "dependencies": {
     "@libsql/client": "^0.3.1",
+    "core-js": "^3.32.0",
     "whatwg-url": "^13.0.0"
   }
 }
