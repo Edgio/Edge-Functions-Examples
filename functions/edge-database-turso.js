@@ -1,7 +1,7 @@
 import { URL, URLSearchParams } from 'whatwg-url';
 import hasOwn from 'core-js/internals/has-own-property';
 
-Object.defineProperty(Object.__proto__, 'hasOwn', { value: hasOwn });
+Object.defineProperty(Object.prototype, 'hasOwn', { value: hasOwn });
 global.URL = URL;
 global.URLSearchParams = URLSearchParams;
 import { createClient } from "@libsql/client/http";
