@@ -14,15 +14,31 @@ To use this project, you must be an Edgio customer and signed up for the Edge Fu
 2. Clone the repository to your local machine.
 3. Run `npm install` in the repository directory.
 
+```bash
+npm i
+```
+
 ## Getting Started
 
 After setting up the project, run `npm run edgio dev` to start a local development server to test the example functions.
 
+```bash
+npm run edgio dev
+```
+
 To deploy the project to Edgio, use the command `npm run edgio deploy`. Note that deployment to Edgio requires you to be logged into Edgio CLI which can be done via `npm run edgio login` and following the instructions.
+
+```bash
+npm run edgio deploy
+```
 
 Start the React frontend by running `npm run dev`.
 
-This project deploys to `edge-functions-sandbox` team, you must be a member of that team to deploy or you can change the `team` parameter in `edgio.config.js` file but the Edge Functions must be enabled for your team, which can be done by contacting your account manager at Edgio and signing up for the  Edge Functions.
+```bash
+npm run dev
+```
+
+Edge Functions must be enabled for your team, which can be done by contacting your account manager at Edgio and signing up for the Edge Functions.
 
 ## Known Issues and Limitations
 
