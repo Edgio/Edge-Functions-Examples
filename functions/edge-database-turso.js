@@ -1,6 +1,9 @@
 import { URL, URLSearchParams } from 'whatwg-url';
 import hasOwn from 'core-js/internals/has-own-property';
 
+// const TURSO_URL = ""
+// const AUTH_TOKEN = ""
+
 Object.defineProperty(Object.prototype, 'hasOwn', { value: hasOwn });
 global.URL = URL;
 global.URLSearchParams = URLSearchParams;
@@ -11,12 +14,22 @@ const tursoFetch = function (...args) {
   return fetch(url, { ...options, edgio: { origin: 'turso' } }, ...rest)
 }
 
+const client = createClient({
+  fetch: tursoFetch,
+  url: TURSO_URL,
+  authToken: AUTH_TOKEN,
+});
+
 export async function handleHttpRequest(request, context) {
-  const client = createClient({
-    fetch: tursoFetch,
-    url: "libsql://peaceful-captain-flint-raeesbhatti.turso.io",
+  const result = await client.execute("select * from users")
+  const response = new Response(JSON.stringify(result), {
+    headers: {
+      "content-type": "application/json; charset=utf-8",
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET',
+      'Access-Control-Allow-Headers': 'Content-Type'
+    },
   });
 
-  const result = await client.execute("SELECT 1 AS one");
-  context.respondWith(new Response(JSON.stringify(result)));
+  context.respondWith(response);
 }

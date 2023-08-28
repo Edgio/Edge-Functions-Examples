@@ -1,12 +1,15 @@
 // This file was automatically added by edgio init.
 // You should commit this file to source control.
 // Learn more about this file at https://docs.edg.io/guides/edgio_config
+
+require('dotenv').config()
+
 module.exports = {
   // The name of the site in Edgio to which this app should be deployed.
   name: "edgio-functions-examples",
 
   // The name of the team in Edgio to which this app should be deployed.
-  team: 'edge-functions-sandbox',
+  // team: 'edge-functions-sandbox',
 
   // Overrides the default path to the routes file. The path should be relative to the root of your app.
   // routes: 'routes.js',
@@ -34,18 +37,18 @@ module.exports = {
 
       // When provided, the following value will be sent as the host header when connecting to the origin.
       // If omitted, the host header from the browser will be forwarded to the origin.
-      override_host_header: 'peaceful-captain-flint-raeesbhatti.turso.io',
+      override_host_header: process.env.HOST_HEADER,
 
       // The list of backend hosts
       hosts: [
         {
           // The domain name or IP address of the origin server
-          location: 'peaceful-captain-flint-raeesbhatti.turso.io',
+          location: process.env.HOST_HEADER,
         },
       ],
       tls_verify: {
         use_sni: true,
-        sni_hint_and_strict_san_check: 'peaceful-captain-flint-raeesbhatti.turso.io',
+        sni_hint_and_strict_san_check: process.env.HOST_HEADER,
       }
     },
   ],
