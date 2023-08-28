@@ -64,6 +64,8 @@ the [Edgio team](https://edg.io/contact-support/).
 
 [MIT License](LICENSE-CODE) for the code.
 
+## Turso
+
 ### Install Turso CLI and Create Account
 
 If you're on MacOS you can install the CLI with Homebrew:
@@ -107,4 +109,93 @@ Set `HOST_HEADER` environment variable with your Turso domain.
 
 ```bash
 HOST_HEADER=""
+```
+
+## PlanetScale
+
+### Install PlanetScale CLI and Create Account
+
+```bash
+brew install planetscale/tap/pscale
+
+# Check your `pscale` version
+pscale version
+
+# Authenticate with your PlanetScale account
+pscale auth login
+```
+
+### Create a PlanetScale Database
+
+```bash
+pscale database create edgio-mysql --region us-west
+```
+
+### Connect to PlanetScale Database
+
+```bash
+pscale shell edgio-mysql main
+```
+
+Create a new table called `greeting_table` with a single `text` column called `Greeting`.
+
+```sql
+CREATE TABLE greeting_table (
+  greeting text,
+  id int not null auto_increment,
+  primary key (id)
+);
+```
+
+Insert two rows into the table.
+
+```sql
+INSERT INTO greeting_table (greeting) VALUES ('Hello'), ('Goodbye');
+```
+
+Return the list of available tables.
+
+```sql
+show tables;
+```
+
+Return all the data in the `greeting_table` table.
+
+```sql
+SELECT * FROM greeting_table;
+```
+
+```
++---------+----+
+| greeting    | id |
++---------+----+
+| Hello   |  1 |
+| Goodbye |  2 |
++---------+----+
+```
+
+### Create a Password for PlanetScale Database
+
+Promote branch to production:
+
+```bash
+pscale branch promote edgio-mysql main
+```
+
+Create password:
+
+```bash
+pscale password create edgio-mysql main mypass
+```
+
+```bash
+mysql -h aws.connect.psdb.cloud \
+  -u USERNAME \
+  -pPASSWORD \
+  --ssl-mode=VERIFY_IDENTITY \
+  --ssl-ca=/etc/ssl/cert.pem
+```
+
+```sql
+SELECT * FROM greeting_table;
 ```
