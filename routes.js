@@ -19,6 +19,9 @@ export default new Router()
   .static('public')
 
   // Edgio Functions
+  .match('/example/edge-database-turso', {
+    edge_function: './functions/edge-database-turso.js',
+  })
   .match('/', {
     edge_function: './functions/sample-html-page.js',
   })
