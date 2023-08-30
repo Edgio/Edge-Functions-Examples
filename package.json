@@ -4,7 +4,7 @@
   "description": "Edgio Functions Examples",
   "scripts": {
     "edgio": "edgio",
-    "update": "edgio use pre-v7-edge",
+    "update": "edgio use latest",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
     "build": "vite build",
@@ -18,10 +18,10 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@edgio/cli": "^7.1.2-next-1692044776-586a649.0",
-    "@edgio/core": "^7.1.2-next-1692044776-586a649.0",
-    "@edgio/devtools": "^7.1.2-next-1692044776-586a649.0",
-    "@edgio/prefetch": "^7.1.2-next-1692044776-586a649.0",
+    "@edgio/cli": "^7.2.2",
+    "@edgio/core": "^7.2.2",
+    "@edgio/devtools": "^7.2.2",
+    "@edgio/prefetch": "^7.2.2",
     "@vitejs/plugin-react": "^4.0.3",
     "vite": "^4.4.9"
   },
