@@ -1,12 +1,12 @@
-import { connect } from '@planetscale/database'
+import { connect } from '@planetscale/database';
 
 // polyfills
-import '../polyfills/Buffer'
-import '../polyfills/URL'
-import createFetch from '../polyfills/fetch'
+import '../utils/polyfills/Buffer';
+import '../utils/polyfills/URL';
+import createFetch from '../utils/fetch';
 
-// const PLANETSCALE_USERNAME = ""
-// const PLANETSCALE_PASSWORD = ""
+const PLANETSCALE_USERNAME = '';
+const PLANETSCALE_PASSWORD = '';
 
 export async function handleHttpRequest(request, context) {
   const config = {
@@ -14,26 +14,26 @@ export async function handleHttpRequest(request, context) {
     username: PLANETSCALE_USERNAME,
     password: PLANETSCALE_PASSWORD,
     fetch: createFetch('planetscale'),
-  }
+  };
 
-  const conn = connect(config)
+  const conn = connect(config);
 
   const results = await conn.transaction(async (tx) => {
-    return await tx.execute('SELECT * FROM greeting_table;')
-  })
+    return await tx.execute('SELECT * FROM greeting_table;');
+  });
 
   const content = JSON.stringify({
     message: `${JSON.stringify(results.rows)}`,
-  })
+  });
 
   const response = new Response(content, {
     headers: {
-      "content-type": "application/json; charset=utf-8",
+      'content-type': 'application/json; charset=utf-8',
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET',
-      'Access-Control-Allow-Headers': 'Content-Type'
+      'Access-Control-Allow-Headers': 'Content-Type',
     },
-  })
+  });
 
-  context.respondWith(response)
+  context.respondWith(response);
 }

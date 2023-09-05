@@ -44,11 +44,11 @@ Edge Functions must be enabled for your team, which can be done by contacting yo
 
 Currently
 
-* We only support JavaScript-based code
-* Each request has a 60-second (wall time) timeout limit
-* Each request is limited to 50ms of CPU time
-* Each request is limited to 2MB of memory
-* An Edgio Function can make fetch requests only to origins defined in your property configuration
+- We only support JavaScript-based code
+- Each request has a 60-second (wall time) timeout limit
+- Each request is limited to 50ms of CPU time
+- Each request is limited to 2MB of memory
+- An Edgio Function can make fetch requests only to origins defined in your property configuration
   file (`edgio.config.js`).
 
 We're looking forward to feedback from our customers about these limitations and how we can improve the product.
@@ -85,8 +85,8 @@ turso db tokens create my-db
 Set your token and URL variables in `functions/edge-database-turso.js`.
 
 ```js
-const TURSO_URL = ""
-const AUTH_TOKEN = ""
+const TURSO_URL = '';
+const AUTH_TOKEN = '';
 ```
 
 ### Seed Database
