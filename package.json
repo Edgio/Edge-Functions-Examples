@@ -18,10 +18,10 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@edgio/cli": "^7.2.2",
-    "@edgio/core": "^7.2.2",
-    "@edgio/devtools": "^7.2.2",
-    "@edgio/prefetch": "^7.2.2",
+    "@edgio/cli": "^7.2.3-rc-1693910716-d464b56.0",
+    "@edgio/core": "^7.2.3-rc-1693910716-d464b56.0",
+    "@edgio/devtools": "^7.2.3-rc-1693910716-d464b56.0",
+    "@edgio/prefetch": "^7.2.3-rc-1693910716-d464b56.0",
     "@vitejs/plugin-react": "^4.0.3",
     "vite": "^4.4.9"
   },
