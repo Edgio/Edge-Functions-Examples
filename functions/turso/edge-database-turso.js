@@ -14,14 +14,14 @@ const tursoFetch = function (...args) {
   return fetch(url, { ...options, edgio: { origin: 'turso' } }, ...rest)
 }
 
-const client = createClient({
-  fetch: tursoFetch,
-  url: TURSO_URL,
-  authToken: AUTH_TOKEN,
-})
-
 export async function handleHttpRequest(request, context) {
-  const result = await client.execute("select * from users")
+  const client = createClient({
+    fetch: tursoFetch,
+    url: context.environmentVars.TURSO_URL,
+    authToken: context.environmentVars.TURSO_DB_TOKEN,
+  });
+
+  const result = await client.execute("SELECT 1 AS one, 2 AS two, 3 AS three");
   const response = new Response(JSON.stringify(result), {
     headers: {
       "content-type": "application/json; charset=utf-8",

@@ -31,19 +31,19 @@ module.exports = {
       ],
     },
 
-    // {
-    //   name: 'turso',
-    //   override_host_header: TURSO_HOST_HEADER,
-    //   hosts: [
-    //     {
-    //       location: TURSO_HOST_HEADER,
-    //     },
-    //   ],
-    //   tls_verify: {
-    //     use_sni: true,
-    //     sni_hint_and_strict_san_check: TURSO_HOST_HEADER,
-    //   }
-    // },
+    {
+      name: 'turso',
+      override_host_header: process.env.TURSO_HOSTNAME,
+      hosts: [
+        {
+          location: process.env.TURSO_HOSTNAME,
+        },
+      ],
+      tls_verify: {
+        use_sni: true,
+        sni_hint_and_strict_san_check: process.env.TURSO_HOSTNAME,
+      }
+    },
 
     // {
     //   name: 'planetscale',
