@@ -20,7 +20,7 @@ export default new Router()
 
   // Edgio Functions
   .match('/example/edge-database-turso', {
-    edge_function: './functions/edge-database-turso.js',
+    edge_function: './functions/turso/edge-database-turso.js',
   })
   .match('/example/edge-database-planetscale', {
     edge_function: './functions/edge-database-planetscale.js',
