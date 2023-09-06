@@ -85,6 +85,16 @@ const template = `
             document.execCommand("copy");
             document.body.removeChild(textarea);
         }
+
+        function keepSessionAlive() {
+            fetch('https://edgio-examples-edgio-function-examples-default.edgio.link/example/waiting-room')
+                .then(response => response.text())
+                .then(data => console.log("Session kept alive"))
+                .catch(error => console.error("Error keeping session alive:", error));
+        }
+
+        // Set interval to keep session alive every 15 seconds
+        setInterval(keepSessionAlive, 15000);
     </script>
 </head>
 

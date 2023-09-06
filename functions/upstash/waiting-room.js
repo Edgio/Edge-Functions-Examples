@@ -21,6 +21,8 @@ const fetch = createFetchForOrigin('upstash');
  * Main handler for the edge request.
  */
 export async function handleHttpRequest(request, context) {
+  let resp;
+
   // Set context environment variables to process.env
   setEnvFromContext(context);
 
@@ -29,22 +31,17 @@ export async function handleHttpRequest(request, context) {
   // Get user ID from cookie or generate a new one
   const userId = cookies[COOKIE_NAME_ID] ?? generateId();
 
-  // Get the current number of records
+  // Get the current number of active sessions and the active user
   const size = await getRecordCount();
+  const isActiveUser = (await getRecord(userId)) === '1';
 
   console.log('Current number of active sessions: ', size);
 
-  let resp;
-
   // Check capacity
-  if (size < TOTAL_ACTIVE_USERS) {
+  if (size < TOTAL_ACTIVE_USERS || isActiveUser) {
     resp = await getDefaultResponse(request, userId);
   } else {
-    const user = await getRecord(userId);
-    resp =
-      user === '1'
-        ? await getDefaultResponse(request, userId)
-        : await getWaitingRoomResponse();
+    resp = await getWaitingRoomResponse(position);
   }
 
   context.respondWith(resp);
@@ -92,29 +89,31 @@ async function getDefaultResponse(request, userId) {
 async function sendUpstashRequest(cmd) {
   cmd = Array.isArray(cmd) ? cmd.join('/') : cmd;
 
-  return fetch(`${process.env.UPSTASH_REDIS_REST_URL}`, {
-    method: 'POST',
-    body: JSON.stringify(cmd.split('/')),
-    headers: {
-      Authorization: `Bearer ${process.env.UPSTASH_REDIS_REST_TOKEN}`,
-    },
-  });
+  return (
+    await fetch(`${process.env.UPSTASH_REDIS_REST_URL}`, {
+      method: 'POST',
+      body: JSON.stringify(cmd.split('/')),
+      headers: {
+        Authorization: `Bearer ${process.env.UPSTASH_REDIS_REST_TOKEN}`,
+      },
+    })
+  ).json();
 }
 
 /**
  * Get the current number of records.
  */
 async function getRecordCount() {
-  const resp = await sendUpstashRequest('DBSIZE');
-  return (await resp.json()).result;
+  const data = await sendUpstashRequest('DBSIZE');
+  return data.result;
 }
 
 /**
  * Fetch a record from Upstash by key.
  */
 async function getRecord(key) {
-  const resp = await sendUpstashRequest(['GET', key]);
-  return resp;
+  const data = await sendUpstashRequest(['GET', key]);
+  return data.result;
 }
 
 /**
@@ -127,8 +126,10 @@ async function setExpiryRecord(key, value, seconds) {
 /**
  * Response for the waiting room.
  */
-async function getWaitingRoomResponse() {
-  const response = new Response(capacityTemplate);
+async function getWaitingRoomResponse(position) {
+  const response = new Response(
+    capacityTemplate.replace('{{position}}', position),
+  );
   response.headers.set('content-type', 'text/html;charset=UTF-8');
   return response;
 }
