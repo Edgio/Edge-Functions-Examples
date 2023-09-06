@@ -29,6 +29,9 @@
     "@edgio/devtools": "^7.2.3-rc-1693910716-d464b56.0",
     "@edgio/prefetch": "^7.2.3-rc-1693910716-d464b56.0",
     "@vitejs/plugin-react": "^4.0.3",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.8",
     "vite": "^4.4.9"
   },
   "dependencies": {
