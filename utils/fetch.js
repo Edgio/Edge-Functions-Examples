@@ -8,17 +8,18 @@
 export default function createFetchWithOrigin(originName) {
   if (!originName) {
     throw new Error(
-      "'originName' is required and must be a name defined in edgio.config.js"
-    )
+      "'originName' is required and must be a name defined in edgio.config.js",
+    );
   }
 
-  return (url, options = {}, ...rest) => {
+  return async (url, options = {}, ...rest) => {
     const modifiedOptions = {
       ...options,
       edgio: {
         origin: originName,
       },
-    }
-    return fetch(url, modifiedOptions, ...rest)
-  }
+    };
+
+    return fetch(url, modifiedOptions, ...rest);
+  };
 }
