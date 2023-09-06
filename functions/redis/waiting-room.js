@@ -24,10 +24,12 @@ export async function handleHttpRequest(request, context) {
   const cookies = getCookiesFromRequest(request);
 
   // Get user ID from cookie or generate a new one
-  const userId = cookies[COOKIE_NAME_ID]?.value ?? makeid(8);
+  const userId = cookies[COOKIE_NAME_ID]?.value ?? generateId();
 
   // Get the current number of records
   const size = await getRecordCount();
+
+  console.log('Current number of active sessions: ', size);
 
   let resp;
 
@@ -48,14 +50,10 @@ export async function handleHttpRequest(request, context) {
 /**
  * Generate a random ID
  */
-function makeid(length) {
-  let result = '';
-  const characters =
-    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  for (let i = 0; i < length; i++) {
-    result += characters.charAt(Math.floor(Math.random() * characters.length));
-  }
-  return result;
+function generateId(len = 10) {
+  return Array.from({ length: len }, () =>
+    ((Math.random() * 36) | 0).toString(36),
+  ).join('');
 }
 
 /**
