@@ -127,9 +127,7 @@ async function setExpiryRecord(key, value, seconds) {
  * Response for the waiting room.
  */
 async function getWaitingRoomResponse(position) {
-  const response = new Response(
-    capacityTemplate.replace('{{position}}', position),
-  );
+  const response = new Response(capacityTemplate);
   response.headers.set('content-type', 'text/html;charset=UTF-8');
   return response;
 }
