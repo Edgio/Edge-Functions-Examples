@@ -4,17 +4,17 @@
 
 require('dotenv').config();
 
-// const TURSO_HOST_HEADER = ""
-// const PLANETSCALE_HOST_HEADER = ""
-const DUMMY_JSON_HEADER = 'edgio-functions-dummy-json-default.edgio.link';
-const UPSTASH_HOST = 'us1-fitting-ox-38647.upstash.io';
+const TURSO_HOSTNAME = 'peaceful-captain-flint-raeesbhatti.turso.io';
+const DUMMY_JSON_HOSTNAME = 'edgio-functions-dummy-json-default.edgio.link';
+const UPSTASH_HOSTNAME = 'us1-fitting-ox-38647.upstash.io';
+// const PLANETSCALE_HOSTNAME = '';
 
 module.exports = {
   // The name of the site in Edgio to which this app should be deployed.
-  name: 'edgio-functions-examples',
+  name: 'edgio-function-examples',
 
   // The name of the team in Edgio to which this app should be deployed.
-  // team: 'edge-functions-sandbox',
+  team: 'edgio-examples',
 
   origins: [
     {
@@ -23,37 +23,37 @@ module.exports = {
 
       // When provided, the following value will be sent as the host header when connecting to the origin.
       // If omitted, the host header from the browser will be forwarded to the origin.
-      override_host_header: DUMMY_JSON_HEADER,
+      override_host_header: DUMMY_JSON_HOSTNAME,
 
       // The list of backend hosts
       hosts: [
         {
           // The domain name or IP address of the origin server
-          location: DUMMY_JSON_HEADER,
+          location: DUMMY_JSON_HOSTNAME,
         },
       ],
     },
 
     {
       name: 'turso',
-      override_host_header: process.env.TURSO_HOSTNAME,
+      override_host_header: TURSO_HOSTNAME,
       hosts: [
         {
-          location: process.env.TURSO_HOSTNAME,
+          location: TURSO_HOSTNAME,
         },
       ],
       tls_verify: {
         use_sni: true,
-        sni_hint_and_strict_san_check: process.env.TURSO_HOSTNAME,
+        sni_hint_and_strict_san_check: TURSO_HOSTNAME,
       },
     },
 
     // {
     //   name: 'planetscale',
-    //   override_host_header: PLANETSCALE_HOST_HEADER,
+    //   override_host_header: PLANETSCALE_HOSTNAME,
     //   hosts: [
     //     {
-    //       location: PLANETSCALE_HOST_HEADER,
+    //       location: PLANETSCALE_HOSTNAME,
     //     },
     //   ],
     // },
@@ -64,19 +64,19 @@ module.exports = {
 
       // When provided, the following value will be sent as the host header when connecting to the origin.
       // If omitted, the host header from the browser will be forwarded to the origin.
-      override_host_header: UPSTASH_HOST,
+      override_host_header: UPSTASH_HOSTNAME,
 
       // The list of backend hosts
       hosts: [
         {
           // The domain name or IP address of the origin server
-          location: UPSTASH_HOST,
+          location: UPSTASH_HOSTNAME,
         },
       ],
 
       tls_verify: {
         use_sni: true,
-        sni_hint_and_strict_san_check: UPSTASH_HOST,
+        sni_hint_and_strict_san_check: UPSTASH_HOSTNAME,
         allow_self_signed_certs: true,
       },
     },

@@ -4,6 +4,9 @@
   "description": "Edgio Functions Examples",
   "scripts": {
     "edgio": "edgio",
+    "edgio:dev": "edgio dev",
+    "edgio:build": "edgio build",
+    "edgio:deploy": "edgio deploy",
     "update": "edgio use latest",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
@@ -26,9 +29,6 @@
     "@edgio/devtools": "^7.2.3-rc-1693910716-d464b56.0",
     "@edgio/prefetch": "^7.2.3-rc-1693910716-d464b56.0",
     "@vitejs/plugin-react": "^4.0.3",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.0",
-    "prettier": "3.0.3",
     "vite": "^4.4.9"
   },
   "dependencies": {
