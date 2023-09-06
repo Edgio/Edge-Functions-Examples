@@ -38,5 +38,5 @@ export default new Router()
     edge_function: './functions/manifest-manipulation.js',
   })
   .match('/example/waiting-room', {
-    edge_function: './functions/redis/waiting-room.js',
+    edge_function: './functions/upstash/waiting-room.js',
   });

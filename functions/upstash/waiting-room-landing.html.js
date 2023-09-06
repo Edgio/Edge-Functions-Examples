@@ -94,7 +94,7 @@ const template = `
         <p>
             This demo showcases an effective way to manage website traffic during high-volume periods. When the site is at full capacity, visitors are temporarily placed in a waiting room, ensuring a smooth user experience.
         </p>
-        <p>Experience this firsthand by opening <a href="https://edgio-examples-edgio-function-examples-default.edgio.link/example/waiting-room">this link</a> in multiple browser sessions. Or issue the \`curl\` command below to make multiple requests:</p>
+        <p>Experience this firsthand by opening <a href="/example/waiting-room">this link</a> in multiple browser sessions. Or issue the \`curl\` command below to make multiple requests:</p>
         <div class="code-block">curl https://edgio-examples-edgio-function-examples-default.edgio.link/example/waiting-room</div>
         <button class="copy-btn" onclick="copyCodeToClipboard()">Copy Code</button>
         <p>Dive into the code to see how it works.</p>
