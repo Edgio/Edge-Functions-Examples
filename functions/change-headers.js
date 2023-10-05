@@ -3,5 +3,5 @@ export async function handleHttpRequest(request, context) {
     edgio: { origin: "dummy-json" }
   });
   upstreamResponse.headers.set('x-functions-power', '9001');
-  context.respondWith(upstreamResponse);
+  return upstreamResponse;
 }

@@ -22,5 +22,5 @@ export async function handleHttpRequest(request, context) {
     headers: { "content-type": "text/html; charset=utf-8" },
   });
 
-  context.respondWith(response);
+  return response;
 }

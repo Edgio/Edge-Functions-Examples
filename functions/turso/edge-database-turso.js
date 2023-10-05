@@ -31,5 +31,5 @@ export async function handleHttpRequest(request, context) {
     },
   })
 
-  context.respondWith(response)
+  return response
 }

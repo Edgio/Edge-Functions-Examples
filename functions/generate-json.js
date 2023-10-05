@@ -12,5 +12,5 @@ export async function handleHttpRequest(request, context) {
     headers: { "content-type": "application/json; charset=utf-8", 'x-edge-power': '9001' },
   });
 
-  context.respondWith(response);
+  return response;
 }
