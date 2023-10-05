@@ -1,6 +1,7 @@
 // This file was added by edgio init.
 // You should commit this file to source control.
 import { Router, edgioRoutes } from '@edgio/core'
+import { redirects } from "./redirects";
 
 export default new Router()
   // Here is an example where we cache api/* at the edge but prevent caching in the browser
@@ -15,6 +16,10 @@ export default new Router()
 
   // plugin enabling basic Edgio functionality
   .use(edgioRoutes)
+
+  .if({ path: Object.keys(redirects) }, {
+    edge_function: './functions/redirects.js',
+  })
 
   .static('public')
 
