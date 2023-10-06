@@ -8,5 +8,5 @@ export function handleHttpRequest(request, context) {
     return new Response("Not found", { status: 404 });
   }
 
-  return new Response("", { status: 301, headers: { location: redirects[url.pathname] } });
+  return Response.redirect(redirects[url.pathname], 301);
 }
