@@ -17,6 +17,7 @@ export default new Router()
   // plugin enabling basic Edgio functionality
   .use(edgioRoutes)
 
+  // This loops through the "source" part of the redirects and puts them in a single route that invokes the redirect function
   .if({ path: Object.keys(redirects) }, {
     edge_function: './functions/redirects.js',
   })
