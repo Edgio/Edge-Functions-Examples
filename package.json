@@ -7,6 +7,7 @@
     "update": "edgio use latest",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
+    "dev:express": "PORT=3001 node src/app.js",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -18,9 +19,10 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@edgio/cli": "^7.2.8",
-    "@edgio/core": "^7.2.8",
-    "@edgio/prefetch": "^7.2.8",
+    "@edgio/cli": "^7.4.0",
+    "@edgio/core": "^7.4.0",
+    "@edgio/nodejs-connector": "^7.4.0",
+    "@edgio/prefetch": "^7.4.0",
     "@vitejs/plugin-react": "^4.0.3",
     "vite": "^4.4.9"
   },
