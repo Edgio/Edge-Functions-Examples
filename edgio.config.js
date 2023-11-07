@@ -4,14 +4,24 @@
 
 // const TURSO_HOST_HEADER = ""
 // const PLANETSCALE_HOST_HEADER = ""
-const DUMMY_JSON_HEADER = "edgio-functions-dummy-json-default.edgio.link"
 
 module.exports = {
+  connector: '@edgio/nodejs-connector',
   // The name of the site in Edgio to which this app should be deployed.
   name: "edgio-functions-examples",
 
   // The name of the team in Edgio to which this app should be deployed.
   // team: 'edge-functions-sandbox',
+
+  cloudRuntime: 'nodejs18.x',
+  nodejsConnector: {
+    'buildFolder': 'src',
+    "entryFile": "app.js",
+    "envPort": "PORT",
+    "buildCommand": "",
+    "devCommand": "npm run dev:express",
+    "devReadyMessageOrTimeout": 5,
+  },
 
   origins: [
     {
@@ -20,13 +30,14 @@ module.exports = {
 
       // When provided, the following value will be sent as the host header when connecting to the origin.
       // If omitted, the host header from the browser will be forwarded to the origin.
-      override_host_header: DUMMY_JSON_HEADER,
+      override_host_header: 'edgio-functions-dummy-json-default.edgio.link',
 
       // The list of backend hosts
       hosts: [
         {
-          // The domain name or IP address of the origin server
-          location: DUMMY_JSON_HEADER,
+          location: [
+            { hostname: 'edgio-functions-dummy-json-default.edgio.link', port: 443 }
+          ],
         },
       ],
     },

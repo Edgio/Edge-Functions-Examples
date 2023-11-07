@@ -1,9 +1,11 @@
 // This file was added by edgio init.
 // You should commit this file to source control.
 import { Router, edgioRoutes } from '@edgio/core'
+import { nodejsRoutes } from '@edgio/nodejs-connector';
 import { redirects } from "./redirects";
 
 export default new Router()
+  .use(nodejsRoutes)
   // Here is an example where we cache api/* at the edge but prevent caching in the browser
   // .match('/api/:path*', {
   //   caching: {
@@ -42,4 +44,7 @@ export default new Router()
   })
   .match('/example/manifest-manipulation', {
     edge_function: './functions/manifest-manipulation.js',
+  })
+  .match('/example/esi', {
+    edge_function: './functions/esi.js',
   })
