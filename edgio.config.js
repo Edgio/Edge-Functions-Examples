@@ -1,3 +1,4 @@
+const path = require('path');
 // This file was automatically added by edgio init.
 // You should commit this file to source control.
 // Learn more about this file at https://docs.edg.io/guides/edgio_config
@@ -6,7 +7,7 @@
 // const PLANETSCALE_HOST_HEADER = ""
 
 module.exports = {
-  connector: '@edgio/nodejs-connector',
+  connector: '@edgio/express',
   // The name of the site in Edgio to which this app should be deployed.
   name: "edgio-functions-examples",
 
@@ -14,13 +15,8 @@ module.exports = {
   // team: 'edge-functions-sandbox',
 
   cloudRuntime: 'nodejs18.x',
-  nodejsConnector: {
-    'buildFolder': 'src',
-    "entryFile": "app.js",
-    "envPort": "PORT",
-    "buildCommand": "",
-    "devCommand": "npm run dev:express",
-    "devReadyMessageOrTimeout": 5,
+  express: {
+    appPath: path.join(process.cwd(), 'src', 'app.js'),
   },
 
   origins: [

@@ -21,7 +21,7 @@
   "devDependencies": {
     "@edgio/cli": "^7.4.0",
     "@edgio/core": "^7.4.0",
-    "@edgio/nodejs-connector": "^7.4.0",
+    "@edgio/express": "^7.4.0",
     "@edgio/prefetch": "^7.4.0",
     "@vitejs/plugin-react": "^4.0.3",
     "vite": "^4.4.9"
