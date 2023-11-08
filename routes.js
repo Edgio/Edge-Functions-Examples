@@ -31,9 +31,9 @@ export default new Router()
   .match('/example/edge-database-turso', {
     edge_function: './functions/turso/edge-database-turso.js',
   })
-  .match('/example/edge-database-planetscale', {
-    edge_function: './functions/edge-database-planetscale.js',
-  })
+  // .match('/example/edge-database-planetscale', {
+  //   edge_function: './functions/edge-database-planetscale.js',
+  // })
   .match('/', {
     edge_function: './functions/sample-html-page.js',
   })
