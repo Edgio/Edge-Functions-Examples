@@ -3,16 +3,27 @@ import { DOMParser } from 'xmldom'
 
 export async function handleHttpRequest(request, context) {
   const reqUrl = new URL(request.url)
-  const template = await fetch(`${reqUrl.origin}/page-with-esi-tag.html`, {
+  const templateResponse = await fetch(`${reqUrl.origin}/page-with-esi-tag.html`, {
     edgio: {
       origin: 'edgio_serverless'
     },
     headers: {
       '+x-edg-serverless-hint': 'app'
-    }
-  })
+    },
+    redirect: 'manual',
+  });
+  if (!templateResponse.ok) {
+    return new Response(JSON.stringify({
+      status: templateResponse.status,
+      statusText: templateResponse.statusText,
+      location: templateResponse.headers.get('location')
+    }), {
+      status: 500,
+      headers: { 'content-type': 'application/json' }
+    })
+  }
 
-  const templateText = await template.text()
+  const templateText = await templateResponse.text()
 
   // Parse the response
   const parser = new DOMParser()
