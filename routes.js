@@ -27,10 +27,10 @@ export default new Router()
 
   .static('public')
 
-  // Edgio Functions
-  .match('/example/edge-database-turso', {
-    edge_function: './functions/turso/edge-database-turso.js',
-  })
+  // // Edgio Functions
+  // .match('/example/edge-database-turso', {
+  //   edge_function: './functions/turso/edge-database-turso.js',
+  // })
   // .match('/example/edge-database-planetscale', {
   //   edge_function: './functions/edge-database-planetscale.js',
   // })

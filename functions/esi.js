@@ -3,13 +3,8 @@ import { DOMParser } from 'xmldom'
 
 export async function handleHttpRequest(request, context) {
   const reqUrl = new URL(request.url)
-  const templateResponse = await fetch(`${reqUrl.origin}/page-with-esi-tag.html`, {
-    edgio: {
-      origin: 'edgio_serverless'
-    },
-    headers: {
-      '+x-edg-serverless-hint': 'app'
-    },
+  const templateResponse = await fetch(`${reqUrl.origin}/index.html`, {
+    edgio: { origin: 's3-test' },
     redirect: 'manual',
   });
   if (!templateResponse.ok) {
@@ -34,9 +29,7 @@ export async function handleHttpRequest(request, context) {
     // Replace the esi:include tag with the contents of the file
     const jsonSrcUrl = `${esi.getAttribute('src')}`
     const cartData = await fetch(jsonSrcUrl, {
-      edgio: {
-        origin: 'dummy-json'
-      }
+      edgio: { origin: 's3-test' }
     })
     const cartDataJson = await cartData.text()
     const replacementString = `

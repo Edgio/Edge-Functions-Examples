@@ -38,6 +38,28 @@ module.exports = {
         },
       ],
     },
+    {
+      // The name of the backend origin
+      name: 's3-test',
+
+      // When provided, the following value will be sent as the host header when connecting to the origin.
+      // If omitted, the host header from the browser will be forwarded to the origin.
+      override_host_header: 'edgio-test-origin.s3.amazonaws.com',
+
+      // The list of backend hosts
+      hosts: [
+        {
+          location: [
+            { hostname: 'edgio-test-origin.s3.amazonaws.com', port: 443 }
+          ],
+          scheme: 'https',
+        },
+      ],
+      tls_verify: {
+        use_sni: true,
+        sni_hint_and_strict_san_check: 'edgio-test-origin.s3.amazonaws.com',
+      }
+    },
     //
     // {
     //   name: 'turso',
